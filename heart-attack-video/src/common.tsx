@@ -1,0 +1,127 @@
+import React from 'react';
+import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {C, fontFamily} from './theme';
+
+export const SceneBg: React.FC<{children: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill
+    style={{
+      background: `radial-gradient(circle at 30% 40%, ${C.bg2} 0%, ${C.bg1} 70%)`,
+      fontFamily,
+      color: C.text,
+    }}
+  >
+    {children}
+  </AbsoluteFill>
+);
+
+/** Fades + slides children up, starting at `delay` frames. */
+export const FadeUp: React.FC<{delay?: number; children: React.ReactNode; style?: React.CSSProperties}> = ({
+  delay = 0,
+  children,
+  style,
+}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const p = spring({frame: frame - delay, fps, config: {damping: 200}});
+  return (
+    <div style={{opacity: p, transform: `translateY(${(1 - p) * 40}px)`, ...style}}>{children}</div>
+  );
+};
+
+export type Line = {at: number; text: string};
+
+/** Narration caption bar: shows the latest line whose `at` has passed. */
+export const Narration: React.FC<{lines: Line[]}> = ({lines}) => {
+  const frame = useCurrentFrame();
+  const {durationInFrames} = useVideoConfig();
+  const idx = lines.reduce((acc, l, i) => (frame >= l.at ? i : acc), -1);
+  if (idx < 0) return null;
+  const line = lines[idx];
+  const end = idx + 1 < lines.length ? lines[idx + 1].at : durationInFrames;
+  const opacity = interpolate(frame, [line.at, line.at + 12, end - 8, end], [0, 1, 1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+  return (
+    <AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 90}}>
+      <div
+        style={{
+          opacity,
+          maxWidth: 1500,
+          textAlign: 'center',
+          fontSize: 50,
+          lineHeight: 1.3,
+          fontWeight: 600,
+          padding: '20px 40px',
+          borderRadius: 20,
+          background: 'rgba(0,0,0,0.45)',
+        }}
+      >
+        {line.text}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/** Lub-dub heartbeat pulse in [0, ~1]. */
+export const heartPulse = (frame: number, bpm = 70, fps = 30) => {
+  const period = (60 / bpm) * fps;
+  const t = (frame % period) / period;
+  return Math.exp(-(((t - 0.08) / 0.05) ** 2)) + 0.6 * Math.exp(-(((t - 0.26) / 0.05) ** 2));
+};
+
+const HEART =
+  'M100 180 C40 130 0 100 0 60 C0 25 25 0 55 0 C75 0 92 12 100 30 C108 12 125 0 145 0 C175 0 200 25 200 60 C200 100 160 130 100 180 Z';
+
+/**
+ * Stylised heart. `arteries` 0..1 draws the coronary arteries,
+ * `damage` 0..1 grows a dead-muscle zone, `blocked` marks the blockage point.
+ */
+export const Heart: React.FC<{
+  size: number;
+  beat?: boolean;
+  bpm?: number;
+  arteries?: number;
+  damage?: number;
+  blocked?: boolean;
+}> = ({size, beat = true, bpm = 70, arteries = 0, damage = 0, blocked = false}) => {
+  const frame = useCurrentFrame();
+  const scale = beat ? 1 + 0.05 * heartPulse(frame, bpm) : 1;
+  const len = 400;
+  return (
+    <svg width={size} height={size * 0.95} viewBox="-10 -10 220 200" style={{transform: `scale(${scale})`, overflow: 'visible'}}>
+      <defs>
+        <radialGradient id="hg" cx="40%" cy="35%" r="70%">
+          <stop offset="0%" stopColor={C.redLight} />
+          <stop offset="100%" stopColor="#9d1c2a" />
+        </radialGradient>
+        <clipPath id="hc">
+          <path d={HEART} />
+        </clipPath>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="6" />
+        </filter>
+      </defs>
+      <path d={HEART} fill={C.red} opacity={0.35} filter="url(#glow)" />
+      <path d={HEART} fill="url(#hg)" />
+      {damage > 0 && (
+        <g clipPath="url(#hc)">
+          <circle cx={135} cy={125} r={damage * 70} fill={C.dead} opacity={0.92} />
+        </g>
+      )}
+      {arteries > 0 && (
+        <g fill="none" stroke="#ffd1d6" strokeWidth={4} strokeLinecap="round" strokeDasharray={len} strokeDashoffset={len * (1 - arteries)}>
+          <path d="M100 32 C95 60 85 90 70 130" />
+          <path d="M100 32 C110 55 125 75 135 110 C140 125 138 140 130 150" />
+          <path d="M85 80 C65 85 45 85 30 75" />
+          <path d="M118 65 C140 70 160 70 175 62" />
+        </g>
+      )}
+      {blocked && (
+        <g>
+          <circle cx={133} cy={102} r={9} fill={C.clot} stroke={C.plaque} strokeWidth={3} />
+        </g>
+      )}
+    </svg>
+  );
+};
