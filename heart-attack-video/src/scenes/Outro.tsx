@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {FadeUp, Heart, SceneBg} from '../common';
+import {FadeUp, Heart, Narration, SceneBg} from '../common';
 import {C} from '../theme';
 
 // 285 frames
@@ -21,5 +21,6 @@ export const Outro: React.FC = () => (
         </div>
       </FadeUp>
     </AbsoluteFill>
+    <Narration scene="Outro" captions={false} />
   </SceneBg>
 );

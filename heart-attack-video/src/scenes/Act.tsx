@@ -57,13 +57,7 @@ export const Act: React.FC = () => {
           </div>
         </FadeUp>
       </AbsoluteFill>
-      <Narration
-        lines={[
-          {at: 10, text: 'If you suspect a heart attack, call emergency services immediately.'},
-          {at: 150, text: 'Rest, and chew an aspirin only if the dispatcher or a doctor advises it.'},
-          {at: 290, text: 'If the person collapses and isn’t breathing normally, start CPR and use an AED if one is nearby.'},
-        ]}
-      />
+      <Narration scene="Act" />
     </SceneBg>
   );
 };

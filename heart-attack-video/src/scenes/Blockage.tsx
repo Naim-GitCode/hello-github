@@ -70,14 +70,7 @@ export const Blockage: React.FC = () => {
           )}
         </svg>
       </AbsoluteFill>
-      <Narration
-        lines={[
-          {at: 10, text: 'Healthy arteries let blood flow freely.'},
-          {at: 100, text: 'Over years, fat and cholesterol can build up as plaque, narrowing the artery.'},
-          {at: CLOT_T - 45, text: 'If plaque cracks open, a blood clot forms on top of it…'},
-          {at: CLOT_T + 40, text: '…and can block blood flow completely. That is a heart attack.'},
-        ]}
-      />
+      <Narration scene="Blockage" />
     </SceneBg>
   );
 };

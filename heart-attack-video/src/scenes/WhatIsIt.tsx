@@ -28,14 +28,7 @@ export const WhatIsIt: React.FC = () => {
           </FadeUp>
         </div>
       </AbsoluteFill>
-      <Narration
-        lines={[
-          {at: 10, text: 'Your heart is a muscle that never rests.'},
-          {at: 90, text: 'It beats about 100,000 times a day, pumping blood around your body.'},
-          {at: 200, text: 'Like any muscle, it needs its own oxygen supply.'},
-          {at: 320, text: 'That comes from the coronary arteries, which wrap around the heart.'},
-        ]}
-      />
+      <Narration scene="WhatIsIt" />
     </SceneBg>
   );
 };

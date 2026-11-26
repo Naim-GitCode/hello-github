@@ -41,12 +41,6 @@ export const Prevention: React.FC = () => (
         ))}
       </div>
     </AbsoluteFill>
-    <Narration
-      lines={[
-        {at: 10, text: 'Most heart attacks are linked to risks you can change.'},
-        {at: 150, text: 'Stop smoking, and keep blood pressure, cholesterol and blood sugar in check.'},
-        {at: 320, text: 'Stay active, eat well, and see your doctor regularly.'},
-      ]}
-    />
+    <Narration scene="Prevention" />
   </SceneBg>
 );

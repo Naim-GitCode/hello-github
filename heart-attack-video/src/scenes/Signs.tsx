@@ -58,13 +58,6 @@ export const Signs: React.FC = () => (
         ))}
       </div>
     </AbsoluteFill>
-    <Narration
-      lines={[
-        {at: 10, text: 'The most common sign is chest pain or pressure that lasts more than a few minutes.'},
-        {at: 150, text: 'Pain can spread to the arm, jaw, neck or back, often with breathlessness.'},
-        {at: 300, text: 'Others feel a cold sweat, nausea or dizziness.'},
-        {at: 430, text: 'Women, older people and people with diabetes may have milder or unusual symptoms.'},
-      ]}
-    />
+    <Narration scene="Signs" />
   </SceneBg>
 );

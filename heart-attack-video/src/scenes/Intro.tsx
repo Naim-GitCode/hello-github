@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
-import {FadeUp, Heart, SceneBg} from '../common';
+import {FadeUp, Heart, Narration, SceneBg} from '../common';
 import {C} from '../theme';
 
 // 240 frames
@@ -31,6 +31,7 @@ export const Intro: React.FC = () => {
           <div style={{fontSize: 60, color: C.muted, fontWeight: 600}}>What happens, the warning signs, and how to act</div>
         </FadeUp>
       </AbsoluteFill>
+    <Narration scene="Intro" captions={false} />
     </SceneBg>
   );
 };

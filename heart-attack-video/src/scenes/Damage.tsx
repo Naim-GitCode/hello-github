@@ -31,13 +31,7 @@ export const Damage: React.FC = () => {
           </FadeUp>
         </div>
       </AbsoluteFill>
-      <Narration
-        lines={[
-          {at: 10, text: 'Without oxygen, the heart muscle below the blockage starts to die.'},
-          {at: 160, text: 'Damage begins within minutes, and spreads the longer the artery stays blocked.'},
-          {at: 300, text: 'Fast treatment reopens the artery and saves muscle.'},
-        ]}
-      />
+      <Narration scene="Damage" />
     </SceneBg>
   );
 };

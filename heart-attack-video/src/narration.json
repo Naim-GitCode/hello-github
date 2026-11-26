@@ -1,0 +1,41 @@
+{
+  "Intro": [
+    {"at": 75, "text": "What actually happens during a heart attack, and what should you do?"}
+  ],
+  "WhatIsIt": [
+    {"at": 10, "text": "Your heart is a muscle that never rests."},
+    {"at": 90, "text": "It beats about 100,000 times a day, pumping blood around your body."},
+    {"at": 220, "text": "Like any muscle, it needs its own oxygen supply."},
+    {"at": 320, "text": "That comes from the coronary arteries, which wrap around the heart."}
+  ],
+  "Blockage": [
+    {"at": 10, "text": "Healthy arteries let blood flow freely."},
+    {"at": 100, "text": "Over years, fat and cholesterol can build up as plaque, narrowing the artery."},
+    {"at": 325, "text": "If plaque cracks open, a blood clot forms on top of it,"},
+    {"at": 430, "text": "and can block blood flow completely. That is a heart attack."}
+  ],
+  "Damage": [
+    {"at": 10, "text": "Without oxygen, the heart muscle below the blockage starts to die."},
+    {"at": 140, "text": "Damage begins within minutes, and spreads the longer the artery stays blocked."},
+    {"at": 290, "text": "Fast treatment reopens the artery and saves muscle."}
+  ],
+  "Signs": [
+    {"at": 10, "text": "The most common sign is chest pain or pressure that lasts more than a few minutes."},
+    {"at": 160, "text": "Pain can spread to the arm, jaw, neck or back, often with shortness of breath."},
+    {"at": 320, "text": "Others feel a cold sweat, nausea, or dizziness."},
+    {"at": 430, "text": "Women, older people, and people with diabetes may have milder or unusual symptoms."}
+  ],
+  "Act": [
+    {"at": 10, "text": "If you suspect a heart attack, call emergency services immediately."},
+    {"at": 150, "text": "Rest, and chew an aspirin only if the dispatcher or a doctor advises it."},
+    {"at": 290, "text": "If the person collapses and isn't breathing normally, start CPR, and use an AED if one is nearby."}
+  ],
+  "Prevention": [
+    {"at": 10, "text": "Most heart attacks are linked to risks you can change."},
+    {"at": 150, "text": "Stop smoking, and keep blood pressure, cholesterol and blood sugar in check."},
+    {"at": 320, "text": "Stay active, eat well, and see your doctor regularly."}
+  ],
+  "Outro": [
+    {"at": 30, "text": "Know the signs. Act fast. You could save a life."}
+  ]
+}
