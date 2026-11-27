@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 840" width="600" height="840">
+  <title>Anatomical heart (original vector illustration)</title>
+  <defs>
+    <radialGradient id="muscle" cx="45%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#f6b3aa"/>
+      <stop offset="60%" stop-color="#e0857c"/>
+      <stop offset="100%" stop-color="#b65a55"/>
+    </radialGradient>
+    <linearGradient id="aortaG" x1="0" x2="1">
+      <stop offset="0%" stop-color="#d7263d"/><stop offset="100%" stop-color="#b0182e"/>
+    </linearGradient>
+    <clipPath id="heartClip">
+      <path d="M140 262 C205 205 330 192 420 214 C505 236 572 292 578 385 C584 475 560 565 500 645 C440 725 330 795 228 808 C186 812 158 790 140 748 C100 668 70 560 76 460 C82 380 96 302 140 262 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Great vessels behind the heart -->
+  <g id="superior-vena-cava">
+    <path d="M488 250 L492 70" stroke="#2c6fa8" stroke-width="72" stroke-linecap="round" fill="none"/>
+    <path d="M488 250 L492 70" stroke="#3f8fd2" stroke-width="58" stroke-linecap="round" fill="none"/>
+    <ellipse cx="492" cy="70" rx="29" ry="12" fill="#245a88"/>
+  </g>
+
+  <g id="aorta">
+    <g stroke-linecap="round" fill="none">
+      <path d="M345 92 L335 28" stroke="#9e1428" stroke-width="34"/>
+      <path d="M385 82 L392 18" stroke="#9e1428" stroke-width="30"/>
+      <path d="M425 90 L450 34" stroke="#9e1428" stroke-width="28"/>
+      <path d="M345 92 L335 28" stroke="#d7263d" stroke-width="24"/>
+      <path d="M385 82 L392 18" stroke="#d7263d" stroke-width="20"/>
+      <path d="M425 90 L450 34" stroke="#d7263d" stroke-width="18"/>
+      <path d="M300 270 C285 160 320 85 395 88 C455 92 480 140 470 230" stroke="#9e1428" stroke-width="92"/>
+      <path d="M300 270 C285 160 320 85 395 88 C455 92 480 140 470 230" stroke="url(#aortaG)" stroke-width="78"/>
+      <path d="M296 220 C292 150 325 108 385 106" stroke="#ff6b78" stroke-width="10" opacity="0.6"/>
+    </g>
+  </g>
+
+  <g id="pulmonary-trunk">
+    <g stroke-linecap="round" fill="none">
+      <path d="M270 285 C245 225 190 200 110 205" stroke="#5a3d8f" stroke-width="88"/>
+      <path d="M270 285 C245 225 190 200 110 205" stroke="#7b57b8" stroke-width="74"/>
+      <path d="M250 235 C215 218 170 214 120 218" stroke="#a585d9" stroke-width="10" opacity="0.6"/>
+    </g>
+    <ellipse cx="108" cy="205" rx="18" ry="36" fill="#4a2f78"/>
+  </g>
+
+  <g id="pulmonary-veins" stroke-linecap="round" fill="none">
+    <path d="M150 315 L62 300" stroke="#b44a8c" stroke-width="40"/>
+    <path d="M150 315 L62 300" stroke="#e070b4" stroke-width="30"/>
+    <path d="M150 375 L72 388" stroke="#b44a8c" stroke-width="40"/>
+    <path d="M150 375 L72 388" stroke="#e070b4" stroke-width="30"/>
+    <path d="M520 255 L572 222" stroke="#b44a8c" stroke-width="40"/>
+    <path d="M520 255 L572 222" stroke="#e070b4" stroke-width="30"/>
+  </g>
+
+  <!-- Heart muscle -->
+  <g id="heart-muscle">
+    <path d="M140 262 C205 205 330 192 420 214 C505 236 572 292 578 385 C584 475 560 565 500 645 C440 725 330 795 228 808 C186 812 158 790 140 748 C100 668 70 560 76 460 C82 380 96 302 140 262 Z" fill="url(#muscle)" stroke="#9c4744" stroke-width="4"/>
+    <g id="muscle-texture" clip-path="url(#heartClip)" fill="none" stroke="#a24a46" stroke-width="2" opacity="0.22">
+      <path d="M180 200 C120 380 20 560 -90 830"/>
+      <path d="M222 200 C162 380 62 560 -48 830"/>
+      <path d="M264 200 C204 380 104 560 -6 830"/>
+      <path d="M306 200 C246 380 146 560 36 830"/>
+      <path d="M348 200 C288 380 188 560 78 830"/>
+      <path d="M390 200 C330 380 230 560 120 830"/>
+      <path d="M432 200 C372 380 272 560 162 830"/>
+      <path d="M474 200 C414 380 314 560 204 830"/>
+      <path d="M516 200 C456 380 356 560 246 830"/>
+      <path d="M558 200 C498 380 398 560 288 830"/>
+      <path d="M600 200 C540 380 440 560 330 830"/>
+      <path d="M642 200 C582 380 482 560 372 830"/>
+      <path d="M684 200 C624 380 524 560 414 830"/>
+      <path d="M726 200 C666 380 566 560 456 830"/>
+      <path d="M768 200 C708 380 608 560 498 830"/>
+      <path d="M810 200 C750 380 650 560 540 830"/>
+      <path d="M60 520 C200 470 380 480 600 530" opacity="0.6"/>
+      <path d="M60 565 C200 515 380 525 600 575" opacity="0.6"/>
+      <path d="M60 610 C200 560 380 570 600 620" opacity="0.6"/>
+      <path d="M60 655 C200 605 380 615 600 665" opacity="0.6"/>
+      <path d="M60 700 C200 650 380 660 600 710" opacity="0.6"/>
+      <path d="M60 745 C200 695 380 705 600 755" opacity="0.6"/>
+    </g>
+    <path id="atrioventricular-groove" clip-path="url(#heartClip)" d="M86 425 C200 440 300 478 400 486 C470 492 530 496 576 505" fill="none" stroke="#b9615c" stroke-width="22" opacity="0.55" stroke-linecap="round"/>
+    <path d="M150 300 C220 250 330 240 420 260" fill="none" stroke="#ffd2cb" stroke-width="14" opacity="0.35" stroke-linecap="round"/>
+  </g>
+
+  <!-- Opening of the inferior vena cava / coronary sinus -->
+  <g id="inferior-vena-cava">
+    <ellipse cx="432" cy="492" rx="58" ry="48" fill="#2c6fa8"/>
+    <ellipse cx="432" cy="492" rx="46" ry="37" fill="#3f8fd2"/>
+    <ellipse cx="440" cy="498" rx="30" ry="23" fill="#1f4f7a"/>
+  </g>
+
+  <!-- Coronary arteries (each path animatable with stroke-dashoffset) -->
+  <g id="coronary-arteries" fill="none" stroke="#d7263d" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#heartClip)">
+    <path id="artery-circumflex" d="M90 412 C200 428 300 466 398 474 C470 480 530 486 580 494" stroke-width="7"/>
+    <path id="artery-descending" d="M330 468 C345 560 305 660 238 790" stroke-width="6"/>
+    <path id="artery-marginal-left" d="M185 432 C155 520 132 610 120 720" stroke-width="5.5"/>
+    <path id="artery-marginal-right" d="M500 488 C505 560 480 620 445 680" stroke-width="5"/>
+    <g stroke-width="2.6">
+      <path d="M330 520 C370 545 400 580 420 630"/>
+      <path d="M320 600 C280 620 250 650 225 700"/>
+      <path d="M300 680 C330 700 345 730 350 770"/>
+      <path d="M160 520 C130 540 110 560 92 600"/>
+      <path d="M140 620 C165 650 175 690 180 740"/>
+      <path d="M490 560 C520 580 545 590 568 590"/>
+      <path d="M250 455 C240 380 260 320 300 280"/>
+      <path d="M200 440 C170 380 160 330 170 280"/>
+      <path d="M420 476 C440 410 470 360 520 330"/>
+      <path d="M520 488 C540 440 560 410 575 395"/>
+    </g>
+  </g>
+
+  <!-- Cardiac veins -->
+  <g id="cardiac-veins" fill="none" stroke="#3f8fd2" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#heartClip)">
+    <path id="vein-great-cardiac" d="M95 432 C200 452 290 488 378 496" stroke-width="9"/>
+    <path id="vein-middle-cardiac" d="M372 520 C380 610 340 700 270 805" stroke-width="7"/>
+    <path id="vein-posterior" d="M175 448 C150 540 128 630 118 740" stroke-width="6"/>
+    <g stroke-width="3">
+      <path d="M368 600 C400 630 420 670 432 720"/>
+      <path d="M345 680 C310 700 290 730 280 770"/>
+      <path d="M150 560 C120 580 100 610 90 650"/>
+      <path d="M135 660 C160 690 168 720 170 760"/>
+      <path d="M240 470 C230 400 250 340 280 300"/>
+    </g>
+  </g>
+</svg>
